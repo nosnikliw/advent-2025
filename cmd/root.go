@@ -10,6 +10,7 @@ import (
 	day02 "github.com/nosnikliw/advent2025/day-02"
 	day03 "github.com/nosnikliw/advent2025/day-03"
 	day04 "github.com/nosnikliw/advent2025/day-04"
+	day05 "github.com/nosnikliw/advent2025/day-05"
 	"github.com/spf13/cobra"
 )
 
@@ -34,4 +35,5 @@ func init() {
 	rootCmd.AddCommand(day02.Cmd)
 	rootCmd.AddCommand(day03.Cmd)
 	rootCmd.AddCommand(day04.Cmd)
+	rootCmd.AddCommand(day05.Cmd)
 }
