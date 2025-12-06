@@ -70,7 +70,7 @@ func countFreshIngredients(ranges []IntRange, ids []int64) int {
 	count := 0
 	for _, id := range ids {
 		for _, r := range ranges {
-			if r.IsInRange(id) {
+			if r.Includes(id) {
 				count++
 				break
 			}
@@ -124,12 +124,12 @@ type IntRange struct {
 	Max int64
 }
 
-func (r *IntRange) IsInRange(val int64) bool {
+func (r *IntRange) Includes(val int64) bool {
 	return val >= r.Min && val <= r.Max
 }
 
 func (r *IntRange) Overlaps(other IntRange) bool {
-	return r.IsInRange(other.Min) || r.IsInRange(other.Max) || other.IsInRange(r.Min) || other.IsInRange(r.Max)
+	return r.Includes(other.Min) || r.Includes(other.Max) || other.Includes(r.Min) || other.Includes(r.Max)
 }
 
 func (r *IntRange) Merge(other IntRange) IntRange {
