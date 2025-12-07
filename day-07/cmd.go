@@ -27,7 +27,7 @@ func solve(cmd *cobra.Command, args []string) {
 	case "1":
 		fmt.Printf("Split count: %d\n", countSplits(manifold))
 	case "2":
-		fmt.Printf("Split count: %d\n", countPaths(manifold))
+		fmt.Printf("Path count: %d\n", countPaths(manifold))
 	default:
 		fmt.Printf("Invalid part: %s\n", args[0])
 	}
