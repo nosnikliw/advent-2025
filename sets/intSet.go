@@ -27,3 +27,15 @@ func (s *IntSet) Remove(val int64) {
 func (s *IntSet) Count() int {
 	return len(s.members)
 }
+
+func (s *IntSet) Contains(val int64) bool {
+	_, found := s.members[val]
+	return found
+}
+
+func (s *IntSet) Members() (list []int64) {
+	for i := range s.members {
+		list = append(list, i)
+	}
+	return
+}
