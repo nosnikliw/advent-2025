@@ -35,7 +35,7 @@ func solve(cmd *cobra.Command, args []string) {
 
 func countSplits(manifold []string) int64 {
 	startPos := strings.Index(manifold[0], "S")
-	beams := sets.NewIntSet()
+	beams := sets.NewSet[int64]()
 	beams.Add(int64(startPos))
 	splitCount := int64(0)
 	for i := 1; i < len(manifold); i++ {
